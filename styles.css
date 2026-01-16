@@ -1,0 +1,72 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.main-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 0 20px;
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    color: #fff;
+}
+.tab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tabs {
+  text-decoration: none;
+  color: #555;
+  padding: 15px 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent; 
+}
+.tabs:hover {
+  color: #3c536c;
+  background-color: #f8f9fa;
+  text-decoration: underline;
+  text-underline-offset: 8px; 
+}
+
+.tabs.active {
+  color: #007bff;
+  border-bottom: 3px solid #007bff; 
+}
+section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.box {
+    width: px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #240c0c;
+}
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-style: italic;
+    color: #666;
+}
