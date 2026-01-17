@@ -1,28 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>RAFAELA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>RAFAELA | Portfolio</title>
 </head>
-
 <body>
-   
-        <nav class="navbar">
-            <div class="logo">Rafaela Reann David</div>
-                <ul class="nav-links">
-                <li><a href="about">About Me</a></li>
-                <li><a href="education">Education</a></li>
-                <li><a href="experience">Experience</a></li>
-                <li><a href="skills">Skills<a></li>
-                <li><a href="projects">Projects</a></li>
-                <li><a href="contact">Contact</a></li>
+
+   <header>
+    <nav class="navbar">
+        <div class="logo">Rafaela Reann David</div>
+        
+        <div class="nav-right"> <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="theme-switch-wrapper">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        <section id="hero">
+            <div class="status-badge">Available for new opportunities</div>
+
+            <h1 style="font-weight: 300; margin-bottom: -10px;">Hi, I'm</h1>
+            <h1 class="intro">Rafaela</h1>
+            <p class="hero1">An Aspiring Software Developer</p>
+            <p>Passionate in learning and enhancing my skills in developing innovative solutions for the betterment of society.</p>
+        
+            <div class="hero-btns">
+                <a href="#projects" class="btn primary">View my Works</a>
+                <a href="#contact" class="btn secondary">Contact me</a>
+                <a href="Rafaela_CV.pdf" class="btn secondary" download>Download CV</a>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>I'm a dedicated student with a passion for creating efficient, scalable, and user-friendly solutions. My journey in technology began during my undergraduate studies, where I discovered my passion for programming and problem-solving. <br><br>Since then, I've continuously expanded my skill set, staying current with industry and best practices. I believe in writing clean, maintainable code and am committed to continuous learning.</p>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Education</h2>
+    
+            <div class="edu-item">
+                <div class="edu-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="edu-info">
+                    <h3>Bachelor of Science in Information Technology</h3>
+                    <p class="company">University of the Cordilleras | 2023 - 2026</p>
+                    <p>Specialized in Web Development</p>
+                </div>
+            </div>
+
+            <div class="edu-item">
+                <div class="edu-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="edu-info">
+                    <h3>Senior High School Diploma</h3>
+                    <p class="company">University of the Cordilleras | 2022 - 2023</p>
+                    <p>With Honors</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+    <h2>Skills</h2>
+    <p class="section-caption">A comprehensive overview of my current skills from my collegiate degree.</p>
+    
+    <div class="skills-grid">
+        <div class="skill-card">
+            <div class="skill-header">
+                <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Programming Languages</h3>
+            </div>
+            <div class="skill-tags">
+                <span class="tag">HTML</span><span class="tag">CSS</span>
+                <span class="tag">JavaScript</span><span class="tag">C#</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+                <h3>Frontend Development</h3>
+            </div>
+            <div class="skill-tags">
+                <span class="tag">Vue.js</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                <h3>Database & Storage</h3>
+            </div>
+            <div class="skill-tags">
+                <span class="tag">SQL</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Excel</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-header">
+                <div class="skill-icon"><i class="fa-solid fa-wrench"></i></div>
+                <h3>Tools & Technologies</h3>
+            </div>
+            <div class="skill-tags">
+                <span class="tag">Git/GitHub</span><span class="tag">VS Code</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="soft-skills-container">
+        <h3>Soft Skills & Strengths</h3>
+        <div class="skill-tags centered">
+            <span class="tag yellow">Problem Solving</span>
+            <span class="tag yellow">Team Collaboration</span>
+            <span class="tag yellow">Communication</span>
+            <span class="tag yellow">Critical Thinking</span>
+            <span class="tag yellow">Adaptability</span>
+        </div>
+    </div>
+</section>
+
+            <section id="experience" class="section">
+    <h2>Experience</h2>
+    
+    <div class="exp-card detailed">
+        <div class="exp-header">
+            <div class="exp-icon">
+                <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div class="exp-title-group">
+                <h3>Senior Software Engineer</h3>
+                <p class="company-name">Tech Solutions Inc.</p>
+                <div class="exp-metadata">
+                    <span><i class="fa-regular fa-calendar"></i> January 2024 - Present</span>
+                    <span>• San Francisco, CA</span>
+                    <span class="job-type-badge">Full-time</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="exp-content">
+            <p class="exp-summary">Leading the development of cloud-based enterprise applications using modern web technologies.</p>
+            
+            <h4>Key Achievements:</h4>
+            <ul class="achievement-list">
+                <li>Architected and deployed microservices architecture serving 100K+ daily active users</li>
+                <li>Reduced application load time by 40% through optimization and caching strategies</li>
+                <li>Mentored team of 5 junior developers in best practices and code reviews</li>
+                <li>Implemented CI/CD pipeline reducing deployment time by 60%</li>
+            </ul>
+
+            <div class="exp-technologies">
+                <h4>Technologies:</h4>
+                <div class="skill-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">TypeScript</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        
+
+        <section id="projects" class="section">
+    <h2>Projects</h2>
+    <p class="section-caption">A showcase of my recent work, featuring full-stack applications and collaborative projects</p>
+
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-image">
+                <img src="fitness-app.jpg" alt="Fitness Tracking Application">
+            </div>
+            <div class="project-info">
+                <h3>Fitness Tracking Application</h3>
+                <div class="project-metadata">
+                    <span><i class="fa-regular fa-calendar"></i> February 2024</span>
+                    <span>• <i class="fa-solid fa-user"></i> Solo Project</span>
+                </div>
+                <p class="project-description">
+                    Mobile-first fitness tracker with workout logging, progress visualization, and personalized workout recommendations using ML algorithms.
+                </p>
+                <h4>Highlights:</h4>
+                <ul class="achievement-list">
+                    <li>ML-powered recommendations</li>
+                    <li>Workout history tracking</li>
+                    <li>Progress visualization</li>
                 </ul>
-        </nav>
+                <div class="skill-tags">
+                    <span class="tag">React Native</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">Redux</span>
+                </div>
+                <div class="project-btns">
+                    <a href="https://github.com/yourlink" class="btn outline"><i class="fa-brands fa-github"></i> Code</a>
+                </div>
+            </div>
+        </div>
 
+        <div class="project-card">
+            <div class="project-image">
+                <img src="real-estate.jpg" alt="Real Estate Listing Platform">
+            </div>
+            <div class="project-info">
+                <h3>Real Estate Listing Platform</h3>
+                <div class="project-metadata">
+                    <span><i class="fa-regular fa-calendar"></i> December 2023</span>
+                    <span>• <i class="fa-solid fa-users"></i> Team of 2</span>
+                </div>
+                <p class="project-description">
+                    Property listing website with advanced search filters, virtual tours, and integrated messaging system for buyers and sellers.
+                </p>
+                <h4>Highlights:</h4>
+                <ul class="achievement-list">
+                    <li>Advanced search filters</li>
+                    <li>Virtual tour integration</li>
+                    <li>Messaging system</li>
+                </ul>
+                <div class="skill-tags">
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Supabase</span>
+                    <span class="tag">Google Maps API</span>
+                    <span class="tag">Tailwind</span>
+                </div>
+                <div class="project-btns">
+                    <a href="https://github.com/yourlink" class="btn outline"><i class="fa-brands fa-github"></i> Code</a>
+                    <a href="#" class="btn primary small"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<section id="certifications" class="section">
+    <div class="section-header">
+        <h2>Certifications & Credentials</h2>
+        <p class="section-caption">Professional certifications demonstrating my commitment to continuous learning and industry-recognized expertise</p>
+    </div>
+
+    <div class="cert-grid">
+        <div class="cert-card">
+            <div class="cert-header">
+                <div class="cert-icon"><i class="fa-solid fa-ribbon"></i></div>
+                <div class="cert-title-group">
+                    <h3>AWS Certified Solutions Architect - Associate</h3>
+                    <p class="issuer">Amazon Web Services</p>
+                    <div class="cert-metadata">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: September 2024</span>
+                        <span class="valid-status"><i class="fa-regular fa-circle-check"></i> Valid until: September 2027</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="cert-description">Validates expertise in designing distributed systems on AWS with best practices for scalability, security, and cost-optimization.</p>
+            <p class="credential-id">Credential ID: AWS-SAA-123456</p>
+
+            <div class="skills-validated">
+                <h4>Skills Validated:</h4>
+                <div class="skill-tags">
+                    <span class="tag">AWS</span>
+                    <span class="tag">Cloud Architecture</span>
+                    <span class="tag">Security</span>
+                </div>
+            </div>
+
+            <a href="#" class="btn-verify"><i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential</a>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-header">
+                <div class="cert-icon"><i class="fa-solid fa-ribbon"></i></div>
+                <div class="cert-title-group">
+                    <h3>Professional Scrum Master I (PSM I)</h3>
+                    <p class="issuer">Scrum.org</p>
+                    <div class="cert-metadata">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: July 2024</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="cert-description">Demonstrates fundamental understanding of Scrum framework and ability to apply it in real-world scenarios.</p>
+            <p class="credential-id">Credential ID: PSM-789012</p>
+
+            <div class="skills-validated">
+                <h4>Skills Validated:</h4>
+                <div class="skill-tags">
+                    <span class="tag">Scrum</span>
+                    <span class="tag">Agile</span>
+                    <span class="tag">Team Leadership</span>
+                </div>
+            </div>
+
+            <a href="#" class="btn-verify"><i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential</a>
+        </div>
+    </div>
+</section>
+
+        <section id="contact" class="section">
+    <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p class="section-caption">Have a project in mind or just want to say hi? Feel free to reach out!</p>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div class="info-text">
+                    <label>Email</label>
+                    <p>your.email@example.com</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="info-text">
+                    <label>Phone</label>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="info-text">
+                    <label>Location</label>
+                    <p>San Francisco, CA, USA</p>
+                </div>
+            </div>
+
+            <div class="social-connect">
+                <h3>Connect With Me</h3>
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-container">
+            <h3>Send a Message</h3>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" placeholder="What's this about?">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="5" placeholder="Your message here..."></textarea>
+                </div>
+                <button type="submit" class="btn-send">
+                    <i class="fa-regular fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <p>&copy; 2026 Rafaela Reann David. All rights reserved.</p>
+        </div>
+
+        <div class="footer-center">
+            <p>Made with HTML, CSS, Javascript<span class="heart">💛</span></p>
+        </div>
+
+        <div class="footer-right">
+            <a href="#" class="back-to-top">Back to Top &uarr;</a>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
