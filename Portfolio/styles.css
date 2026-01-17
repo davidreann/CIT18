@@ -166,34 +166,74 @@ header {
 }
 
 @media screen and (max-width: 768px) {
+    /* 1. The Navigation Container */
     .nav-links {
-        display: none; /* Hide by default on mobile */
+        display: none; /* Keep hidden by default */
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 100%; /* Positions it exactly below the header */
         left: 0;
         width: 100%;
         background-color: var(--header-bg);
-        padding: 20px;
-        border-bottom: 1px solid var(--border-color);
+        padding: 20px 0; /* Vertical padding only */
+        border-bottom: 2px solid var(--accent-yellow);
+        box-shadow: 0 10px 15px var(--shadow);
+        z-index: 1000;
+        list-style: none; /* Removes bullets if any */
     }
 
+    /* 2. Toggle Visibility */
     .nav-links.active {
-        display: flex; /* Show when active */
+        display: flex !important; 
     }
 
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+        color: var(--text-main);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    /* 3. The Hamburger Icon */
     .menu-toggle {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
         cursor: pointer;
+        z-index: 1001;
     }
 
     .bar {
-        width: 25px;
+        width: 100%;
         height: 3px;
-        background-color: var(--text-color);
-        transition: 0.3s;
+        background-color: var(--text-main); /* Ensure this uses your variable */
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* 4. Hamburger to 'X' Animation */
+    /* (Triggered by the 'is-active' class we added in JS) */
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 }
 
@@ -1026,58 +1066,27 @@ h2::after {
     border: none;                         /* Removing borders to keep it clean */
 }
 
-/* Modal Overlay */
-.modal-overlay {
-    position: fixed;
+/* Ensure this ID matches your HTML exactly */
+#success-modal {
+    display: none;           /* HIDE BY DEFAULT */
+    position: fixed;         /* Stay in place on screen */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: none; /* Hidden by default */
+    background: rgba(0, 0, 0, 0.85); /* Dim the background */
+    z-index: 9999;           /* Stay above everything else */
     justify-content: center;
     align-items: center;
-    z-index: 3000;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
 }
 
-/* Modal Box */
+/* If you want the notification to pop up in the center */
 .modal-content {
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 20px;
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid var(--accent-yellow);
     text-align: center;
     max-width: 400px;
-    width: 90%;
-    border: 2px solid var(--accent-yellow);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    animation: modalPop 0.3s ease-out;
-}
-
-.success-icon {
-    width: 70px;
-    height: 70px;
-    background: var(--accent-yellow);
-    color: #333;
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-}
-
-.modal-content h3 {
-    color: var(--text-color);
-    margin-bottom: 10px;
-}
-
-.modal-content p {
-    color: var(--text-muted);
-    margin-bottom: 25px;
-}
-
-@keyframes modalPop {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
 }

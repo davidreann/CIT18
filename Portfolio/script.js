@@ -10,93 +10,91 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.getElementById('close-modal');
     const btnSend = document.querySelector('.btn-send');
 
-    // --- 2. THEME / NIGHT MODE LOGIC ---
+    // Hide modal on load
+    if (modal) modal.style.display = 'none';
+
+    // --- 2. THEME LOGIC ---
     function setTheme(theme) {
         htmlElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
-        
-        // Update the icon inside the button
         if (themeToggle) {
-            if (theme === 'dark') {
-                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-            } else {
-                themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-            }
+            themeToggle.innerHTML = (theme === 'dark') ? 
+                '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
         }
     }
 
-    // Initial check for saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
+    setTheme(localStorage.getItem('theme') || 'light');
 
-    // Toggle Click Event
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = (currentTheme === 'dark') ? 'light' : 'dark';
-            setTheme(newTheme);
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
         });
     }
 
-    // --- 3. MOBILE MENU LOGIC ---
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
+    // --- 3. MOBILE MENU TOGGLE FIX ---
+    if (menuToggle && navList) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); 
             navList.classList.toggle('active');
+            // Optional: Toggle a class on the hamburger itself for animation
+            menuToggle.classList.toggle('is-active'); 
+        });
+
+        // NEW: Close menu when a link is clicked (Crucial for UX)
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                menuToggle.classList.remove('is-active');
+            });
+        });
+
+        // Close menu if clicking anywhere else on the document
+        document.addEventListener('click', (e) => {
+            const isClickInsideMenu = navList.contains(e.target);
+            const isClickOnToggle = menuToggle.contains(e.target);
+            
+            if (!isClickInsideMenu && !isClickOnToggle && navList.classList.contains('active')) {
+                navList.classList.remove('active');
+                menuToggle.classList.remove('is-active');
+            }
         });
     }
 
-    // Close mobile menu when a link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (navList) navList.classList.remove('active');
-        });
-    });
-
-    // --- 4. FORM SUBMISSION (GOOGLE SHEETS) ---
+    // --- 4. FORM SUBMISSION ---
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevents the white "Success" page redirect
-            
-            // Visual feedback: Loading state
+            e.preventDefault(); 
             const originalText = btnSend.innerHTML;
             btnSend.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
             btnSend.style.pointerEvents = 'none';
 
-            const data = new FormData(contactForm);
-            
             fetch(contactForm.action, {
                 method: 'POST',
-                body: data,
-                mode: 'no-cors' // Added to handle Google Apps Script redirect behavior
+                body: new FormData(contactForm),
+                mode: 'no-cors' 
             })
             .then(() => {
-                // Show our custom success modal
-                if (modal) modal.style.display = 'flex';
-                contactForm.reset(); // Clear the form
+                if (modal) modal.style.setProperty('display', 'flex', 'important');
+                contactForm.reset(); 
             })
             .catch(error => {
-                console.error('Submission Error:', error);
-                alert("Oops! Something went wrong. Please try again.");
+                console.error('Error:', error);
+                alert("Oops! Something went wrong.");
             })
             .finally(() => {
-                // Restore button state
                 btnSend.innerHTML = originalText;
                 btnSend.style.pointerEvents = 'auto';
             });
         });
     }
 
-    // --- 5. MODAL CLOSING LOGIC ---
+    // --- 5. MODAL CLOSING ---
     if (closeModal) {
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
+        closeModal.addEventListener('click', () => modal.style.display = 'none');
     }
-
-    // Close modal if user clicks outside the box
     window.addEventListener('click', (e) => {
-        if (modal && e.target === modal) {
-            modal.style.display = 'none';
-        }
+        if (modal && e.target === modal) modal.style.display = 'none';
     });
 });
