@@ -1,80 +1,97 @@
-html {
-  scroll-behavior: smooth;
+:root {
+    --bg-color: #f4f4f4;
+    --primary-text-color: #333;
+    --secondary-text-color: #666;
+    --accent-color: #007bff;
+    --accent-hover-color: #3c536c;
+    --header-bg: #ffffff;
+    --section-bg: #fff;
+    --border-color: #ddd;
+    --shadow-color: rgba(0,0,0,0.1);
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
 }
-.main-header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
-  padding: 0 20px;
-}
+
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
     text-align: center;
-    color: #fff;
+    color: var(--primary-text-color);
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 20px;
 }
+
 .tab-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
 .tabs {
-  text-decoration: none;
-  color: #555;
-  padding: 15px 20px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border-bottom: 3px solid transparent; 
+    text-decoration: none;
+    color: var(--secondary-text-color);
+    padding: 15px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent; 
 }
+
 .tabs:hover {
-  color: #3c536c;
-  background-color: #f8f9fa;
-  text-decoration: underline;
-  text-underline-offset: 8px; 
+    color: var(--accent-hover-color);
+    background-color: var(--bg-color);
+    text-decoration: underline;
+    text-underline-offset: 8px; 
 }
 
 .tabs.active {
-  color: #007bff;
-  border-bottom: 3px solid #007bff; 
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color); 
 }
+
 section {
-    background: #fff;
+    background: var(--section-bg);
     padding: 20px;
     margin-bottom: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px var(--shadow-color);
 }
 
 .title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
-    align-items: center;
 }
 
 .box {
-    width: px;
     padding: 20px;
-    background-color: #f4f4f4;
-    border: 1px solid #240c0c;
+    background-color: var(--bg-color);
+    border: 1px solid #240c0c; /* This color seems out of place, but keeping it as it was specific */
 }
+
 h2 {
-    color: #2c3e50;
+    color: #2c3e50; /* This color is also specific, keeping it */
     border-bottom: 2px solid #eee;
     padding-bottom: 10px;
 }
+
 footer {
     text-align: center;
     margin-top: 30px;
     font-style: italic;
-    color: #666;
+    color: var(--secondary-text-color);
 }
